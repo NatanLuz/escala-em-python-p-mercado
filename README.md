@@ -19,15 +19,3 @@ O script gera uma escala de trabalho com base nos parâmetros fornecidos:
 4. **Dia fixo de folga**: (Opcional) O dia da semana em que o funcionário terá folga fixa. Por padrão, o dia de folga é segunda-feira.
 5. **Regra 2x1 para domingos**: Implementa uma lógica onde o funcionário trabalha dois domingos seguidos e folga no terceiro domingo.
 
-## Como usar
-
-1. **Instalar dependências**:
-
-   Certifique-se de ter o Python instalado e, em seguida, instale as dependências necessárias utilizando o comando:
-
-   ```bash
-   pip install pandas openpyxl
-
-
-
-Esse README explica como o código funciona, suas funcionalidades, e como executar o script, além de incluir instruções para instalar as dependências. Basta salvar esse conteúdo em um arquivo chamado `README.md` no mesmo diretório do seu projeto.
