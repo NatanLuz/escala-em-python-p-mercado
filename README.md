@@ -44,24 +44,16 @@ pip install pandas openpyxl
 Como Usar
 Clone o repositório:
 
-bash
-Copiar
-Editar
 git clone https://github.com/archivesysl/escala-em-python-p-mercado.git
 cd escala-em-python-p-mercado
 Configure os parâmetros no gerador_escala.py:
 
-python
-Copiar
-Editar
+python:
 nome_funcionario = "João"
 data_inicial = "2024-10-01"
 semanas = 4
 Execute o script:
 
-bash
-Copiar
-Editar
 python gerador_escala.py
 Verifique o arquivo escala_trabalho.xlsx gerado no mesmo diretório.
 
@@ -90,7 +82,7 @@ Resultados Alcançados
 
 Autor
 Natan Da Luz – Desenvolvedor
-📧 Contato: natandaluz01@gmail.com
+Contato: natandaluz01@gmail.com
 
 Projeto realizado como trabalho freelance para automatização de processos em uma rede de mercados.
 
@@ -100,6 +92,8 @@ Basta definir folga_fixa = "terca" (ou outro dia) no código.
 
 2. Como funciona a regra 2x1 para domingos?
 A cada três semanas: trabalha dois domingos seguidos e folga no terceiro.
+
+mais alguma dúvida ? só me mandar um email hehe.
 
 3. É possível gerar mais de uma escala?
 Sim! Chame a função gerar_escala() mais vezes, ajustando o nome e parâmetros para cada funcionário.
