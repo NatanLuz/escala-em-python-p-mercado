@@ -1,10 +1,10 @@
-# 🗓️ Gerador de Escala de Trabalho em Python
+#  Gerador de Escala de Trabalho em Python
 
 Este projeto é um **gerador automatizado de escalas de trabalho** desenvolvido em Python, com exportação para Excel. Ele permite criar escalas semanais personalizadas, com regras como **folga fixa semanal** e **regime 2x1 aos domingos** (trabalha dois, folga um).
 
 ---
 
-## 💼 Sobre o Projeto
+## Sobre o Projeto
 
 Esta ferramenta foi criada como uma **solução personalizada para uma rede de mercados**, em um trabalho **freelance profissional**. O objetivo foi **automatizar a criação de escalas**, reduzindo o tempo manual e eliminando falhas no processo.
 
@@ -12,7 +12,7 @@ A aplicação do projeto gerou resultados visíveis: **aumento da eficiência op
 
 ---
 
-## ⚙️ Funcionalidades
+##  Funcionalidades
 
 - **Geração de Escala:** Cria escalas semanais/mensais com base em parâmetros configuráveis.
 - **Folga Fixa:** Permite selecionar um dia da semana para folga (segunda-feira por padrão).
@@ -21,7 +21,7 @@ A aplicação do projeto gerou resultados visíveis: **aumento da eficiência op
 
 ---
 
-## 🚀 Como Funciona
+##  Como Funciona ?
 
 O script gera a escala com base em:
 
@@ -33,7 +33,7 @@ O script gera a escala com base em:
 
 ---
 
-## 🧰 Pré-requisitos
+## Pré-requisitos
 
 - Python 3
 - Bibliotecas:
