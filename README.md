@@ -1,96 +1,105 @@
-## Gerador de Escala de Trabalho em Python
+# 🗓️ Gerador de Escala de Trabalho em Python
 
-Este projeto é um gerador automatizado de escala de trabalho para funcionários, desenvolvido em Python. O sistema permite a criação de escalas semanais em formato Excel, com a opção de configurar o dia fixo de folga e aplicar uma regra de trabalho para os domingos (2 domingos de trabalho e 1 domingo de folga).
+Este projeto é um **gerador automatizado de escalas de trabalho** desenvolvido em Python, com exportação para Excel. Ele permite criar escalas semanais personalizadas, com regras como **folga fixa semanal** e **regime 2x1 aos domingos** (trabalha dois, folga um).
 
-##  Funcionalidades
+---
 
-- **Geração de Escala de Trabalho**: Cria a escala para múltiplas semanas com base nos parâmetros fornecidos.
-- **Folga Fixa**: Define um dia fixo da semana para a folga (por padrão, segunda-feira).
-- **Regra 2x1 para Domingos**: Implementa a regra onde o funcionário trabalha dois domingos seguidos e folga no terceiro.
-- **Exportação para Excel**: A escala gerada é exportada para um arquivo Excel, facilitando a visualização e controle.
-  
-##  Como funciona
+## 💼 Sobre o Projeto
 
-O script gera uma escala de trabalho com base nos seguintes parâmetros:
+Esta ferramenta foi criada como uma **solução personalizada para uma rede de mercados**, em um trabalho **freelance profissional**. O objetivo foi **automatizar a criação de escalas**, reduzindo o tempo manual e eliminando falhas no processo.
 
-1. **Nome do Funcionário**: Define o nome do funcionário para quem a escala será gerada.
-2. **Data Inicial**: Define a data inicial a partir da qual a escala começará.
-3. **Número de Semanas**: Especifica quantas semanas a escala vai cobrir.
-4. **Dia Fixo de Folga**: (Opcional) Define o dia fixo da semana em que o funcionário terá folga. O valor padrão é segunda-feira.
-5. **Regra 2x1 para Domingos**: A regra aplica-se aos domingos, onde o funcionário trabalhará dois domingos seguidos e terá folga no terceiro domingo.
+A aplicação do projeto gerou resultados visíveis: **aumento da eficiência operacional**, **organização aprimorada da equipe de RH**, e **processos mais ágeis e confiáveis**.
 
-##  Pré-requisitos
+---
 
-Certifique-se de que você tenha o Python instalado no seu sistema, bem como as seguintes bibliotecas:
+## ⚙️ Funcionalidades
 
-- **pandas**: Para manipulação de dados e exportação para Excel.
-- **openpyxl**: Para salvar o arquivo Excel com os dados da escala.
+- **Geração de Escala:** Cria escalas semanais/mensais com base em parâmetros configuráveis.
+- **Folga Fixa:** Permite selecionar um dia da semana para folga (segunda-feira por padrão).
+- **Regra 2x1 para Domingos:** Trabalha dois domingos consecutivos e folga no terceiro.
+- **Exportação para Excel:** Gera arquivo `.xlsx` com layout claro e compartilhável.
 
-Para instalar as dependências, utilize o seguinte comando:
+---
+
+## 🚀 Como Funciona
+
+O script gera a escala com base em:
+
+- **nome_funcionario:** Nome do funcionário.
+- **data_inicial:** Data de início da escala.
+- **semanas:** Número de semanas a cobrir.
+- **folga_fixa:** Dia fixo de folga (opcional; padrão = segunda-feira).
+- **Regra 2x1 para Domingos:** Aplicada automaticamente.
+
+---
+
+## 🧰 Pré-requisitos
+
+- Python 3
+- Bibliotecas:
 
 ```bash
 pip install pandas openpyxl
 
-Como usar:
+Como Usar
+Clone o repositório:
 
-Clone o repositório abaixo
-
+bash
+Copiar
+Editar
 git clone https://github.com/archivesysl/escala-em-python-p-mercado.git
-
-Navegue até o diretório do projeto:
-
 cd escala-em-python-p-mercado
+Configure os parâmetros no gerador_escala.py:
 
-Abra o script gerador_escala.py no seu editor de código preferido e edite os parâmetros conforme necessário:
-
-nome_funcionario = "João"  # Nome do funcionário
-data_inicial = "2024-10-01"  # Data inicial para gerar a escala
-semanas = 4  # Quantidade de semanas para gerar a escala
-
+python
+Copiar
+Editar
+nome_funcionario = "João"
+data_inicial = "2024-10-01"
+semanas = 4
 Execute o script:
 
+bash
+Copiar
+Editar
 python gerador_escala.py
+Verifique o arquivo escala_trabalho.xlsx gerado no mesmo diretório.
 
-Isso irá gerar a escala e salvar o arquivo escala_trabalho.xlsx no mesmo diretório.
+ Personalização
+nome_funcionario: Mude o nome conforme necessário.
 
- Exportação para Excel
-A escala de trabalho será salva em um arquivo Excel chamado escala_trabalho.xlsx. O arquivo terá as seguintes colunas:
+data_inicial: Defina a data de início.
 
-Data: A data específica de cada dia de trabalho.
-Dia: O dia da semana correspondente (segunda, terça, etc.).
-Status: Indica se o dia é de Trabalho ou Folga.
-Funcionário: Nome do funcionário para quem a escala foi gerada.
+semanas: Ajuste a duração da escala.
 
-Personalização
-Você pode personalizar a geração da escala alterando os seguintes parâmetros no código:
+folga_fixa: Escolha outro dia para a folga.
 
-Nome do Funcionário: Altere o nome para o funcionário desejado.
-
-Data Inicial: Defina a data inicial para o início da escala.
-
-Número de Semanas: Especifique o número de semanas que você deseja para a escala.
-
-Dia Fixo de Folga: Caso queira alterar o dia fixo de folga, basta definir outro dia da semana (por padrão, é segunda-feira).
-
-Regra 2x1 para Domingos: Essa regra já está implementada, onde o funcionário trabalha dois domingos seguidos e folga no terceiro.
+A lógica 2x1 para domingos já está incluída.
 
 Tecnologias Usadas
-Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 Python 3
-Pandas (para manipulação de dados e exportação para Excel)
-Openpyxl (para gerar e salvar o arquivo Excel)
+Pandas
+Openpyxl
+
+Resultados Alcançados
+
+✅ Automação completa das escalas
+✅ Eliminação de erros manuais
+✅ Facilidade de uso para times não técnicos
+✅ Código modular e pronto para novas adaptações
 
 Autor
-Natan Da Luz - Desenvolvedor - @archivesysl
+Natan Da Luz – Desenvolvedor
+📧 Contato: natandaluz01@gmail.com
 
-💭 FAQ - Perguntas Frequentes
-1. Como posso personalizar o dia fixo de folga?
-Você pode alterar a variável folga_fixa para o dia da semana que preferir. O valor padrão é segunda.
+Projeto realizado como trabalho freelance para automatização de processos em uma rede de mercados.
 
-2. Como funciona a regra 2x1 para os domingos?
-A cada três semanas, o funcionário trabalha dois domingos seguidos e folga no terceiro domingo.
+💭 DÚVIDAS
+1. Como alterar o dia fixo de folga?
+Basta definir folga_fixa = "terca" (ou outro dia) no código.
 
-3. Como faço para gerar uma escala para mais de uma pessoa?
-Para gerar escalas para outros funcionários, basta chamar a função gerar_escala novamente com o nome de outro funcionário e os parâmetros desejados.
+2. Como funciona a regra 2x1 para domingos?
+A cada três semanas: trabalha dois domingos seguidos e folga no terceiro.
 
-Contato para mais info: natandaluz01@gmail.com
+3. É possível gerar mais de uma escala?
+Sim! Chame a função gerar_escala() mais vezes, ajustando o nome e parâmetros para cada funcionário.
