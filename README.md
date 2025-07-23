@@ -1,99 +1,82 @@
-#  Gerador de Escala de Trabalho em Python
+## Work Schedule Generator in Python
 
-Este projeto é um **gerador automatizado de escalas de trabalho** desenvolvido em Python, com exportação para Excel. Ele permite criar escalas semanais personalizadas, com regras como **folga fixa semanal** e **regime 2x1 aos domingos** (trabalha dois, folga um).
+This project is an automated work schedule generator developed in Python, with Excel export support. It allows you to create customized weekly schedules, including rules such as fixed weekly days off and a 2x1 Sunday rotation (work two, rest one).
 
----
+About the Project
+This tool was created as a custom solution for a supermarket chain, developed as a professional freelance project. The goal was to automate schedule creation, reducing manual effort and eliminating process errors.
 
-## Sobre o Projeto
+The implementation of this project delivered visible results: increased operational efficiency, improved HR team organization, and faster and more reliable processes.
 
-Esta ferramenta foi criada como uma **solução personalizada para uma rede de mercados**, em um trabalho **freelance profissional**. O objetivo foi **automatizar a criação de escalas**, reduzindo o tempo manual e eliminando falhas no processo.
+Features
+Schedule Generation: Creates weekly/monthly schedules based on configurable parameters.
 
-A aplicação do projeto gerou resultados visíveis: **aumento da eficiência operacional**, **organização aprimorada da equipe de RH**, e **processos mais ágeis e confiáveis**.
+Fixed Day Off: Allows selecting a fixed weekly day off (default is Monday).
 
----
+2x1 Sunday Rule: Works two consecutive Sundays and rests on the third.
 
-##  Funcionalidades
+Excel Export: Generates a .xlsx file with a clear and shareable layout.
 
-- **Geração de Escala:** Cria escalas semanais/mensais com base em parâmetros configuráveis.
-- **Folga Fixa:** Permite selecionar um dia da semana para folga (segunda-feira por padrão).
-- **Regra 2x1 para Domingos:** Trabalha dois domingos consecutivos e folga no terceiro.
-- **Exportação para Excel:** Gera arquivo `.xlsx` com layout claro e compartilhável.
+How It Works
+The script generates the schedule based on:
 
----
+employee_name: Name of the employee
 
-##  Como Funciona ?
+start_date: Start date of the schedule
 
-O script gera a escala com base em:
+weeks: Number of weeks to cover
 
-- **nome_funcionario:** Nome do funcionário.
-- **data_inicial:** Data de início da escala.
-- **semanas:** Número de semanas a cobrir.
-- **folga_fixa:** Dia fixo de folga (opcional; padrão = segunda-feira).
-- **Regra 2x1 para Domingos:** Aplicada automaticamente.
+fixed_day_off: Fixed day off (optional; default = Monday)
 
----
+2x1 Sunday Rule: Applied automatically
 
-## Pré-requisitos
+Prerequisites
+Python 3
+Libraries:
 
-- Python 3
-- Bibliotecas:
-
-```bash
 pip install pandas openpyxl
 
-Como Usar
-Clone o repositório:
+How to Use
+Clone the repository:
 
 git clone https://github.com/archivesysl/escala-em-python-p-mercado.git
 cd escala-em-python-p-mercado
-Configure os parâmetros no gerador_escala.py:
 
-python:
-nome_funcionario = "João"
-data_inicial = "2024-10-01"
-semanas = 4
-Execute o script:
+Configure the parameters in gerador_escala.py:
 
+employee_name = "João"
+start_date = "2024-10-01"
+weeks = 4
+
+
+Run the script:
 python gerador_escala.py
-Verifique o arquivo escala_trabalho.xlsx gerado no mesmo diretório.
 
- Personalização
-nome_funcionario: Mude o nome conforme necessário.
+Check the escala_trabalho.xlsx file generated in the same directory.
 
-data_inicial: Defina a data de início.
+Customization
+employee_name: Change the name as needed
 
-semanas: Ajuste a duração da escala.
+start_date: Set the desired start date
 
-folga_fixa: Escolha outro dia para a folga.
+weeks: Adjust the duration of the schedule
 
-A lógica 2x1 para domingos já está incluída.
+fixed_day_off: Choose a different day off
 
-Tecnologias Usadas
+The 2x1 logic for Sundays is already included.
+
+Technologies Used
 Python 3
 Pandas
 Openpyxl
 
-Resultados Alcançados
+Results Achieved
+✅ Fully automated schedule creation
+✅ Elimination of manual errors
+✅ Easy to use for non-technical teams
+✅ Modular code, ready for future adaptations
 
-✅ Automação completa das escalas
-✅ Eliminação de erros manuais
-✅ Facilidade de uso para times não técnicos
-✅ Código modular e pronto para novas adaptações
+Author
+Natan Da Luz – Developer
+Contact: natandaluz01@gmail.com
 
-Autor
-Natan Da Luz – Desenvolvedor
-Contato: natandaluz01@gmail.com
-
-Projeto realizado como trabalho freelance para automatização de processos em uma rede de mercados.
-
-💭 DÚVIDAS
-1. Como alterar o dia fixo de folga?
-Basta definir folga_fixa = "terca" (ou outro dia) no código.
-
-2. Como funciona a regra 2x1 para domingos?
-A cada três semanas: trabalha dois domingos seguidos e folga no terceiro.
-
-mais alguma dúvida ? só me mandar um email hehe.
-
-3. É possível gerar mais de uma escala?
-Sim! Chame a função gerar_escala() mais vezes, ajustando o nome e parâmetros para cada funcionário.
+Project developed as a freelance job for process automation in a supermarket chain.
