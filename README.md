@@ -1,4 +1,8 @@
-## Work Schedule Generator in Python
+# Work Schedule Generator in Python
+
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)]()
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)]()
+[![OpenPyXL](https://img.shields.io/badge/OpenPyXL-000000?style=flat&logo=python&logoColor=white)]()
 
 This project is an automated work schedule generator developed in Python, with Excel export support. It allows you to create customized weekly schedules, including rules such as fixed weekly days off and a 2x1 Sunday rotation (work two, rest one).
 
