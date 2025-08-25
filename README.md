@@ -71,8 +71,11 @@ Openpyxl
 
 Results Achieved
 ✅ Fully automated schedule creation
+
 ✅ Elimination of manual errors
+
 ✅ Easy to use for non-technical teams
+
 ✅ Modular code, ready for future adaptations
 
 Author
