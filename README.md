@@ -4,7 +4,7 @@
 
 ## Visão Geral
 
-Este projeto é um gerador de escala de trabalho automático em Python, com exportação para Excel. Ele cria escalas semanais configuráveis, incluindo:
+Este projeto é um gerador de escala de trabalho SIMPLES, MAS automático em Python, com exportação para Excel. Ele cria escalas semanais configuráveis, incluindo:
 
 - Folga semanal fixa (padrão: segunda-feira)
 - Regra de domingo 2x1 (trabalha dois domingos e folga no terceiro)
