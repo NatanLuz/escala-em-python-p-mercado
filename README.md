@@ -1,92 +1,107 @@
-
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)]()
 [![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)]()
 [![OpenPyXL](https://img.shields.io/badge/OpenPyXL-000000?style=flat&logo=python&logoColor=white)]()
 
-## Preview
-![Work Schedule Generator](https://i.imgur.com/LrlI6FJ.png)
+## Visão Geral
 
-This project is an automated work schedule generator developed in Python, with Excel export support. It allows you to create customized weekly schedules, including rules such as fixed weekly days off and a 2x1 Sunday rotation (work two, rest one).
+Este projeto é um gerador de escala de trabalho automático em Python, com exportação para Excel. Ele cria escalas semanais configuráveis, incluindo:
 
-About the Project
-This tool was created as a custom solution for a supermarket chain, developed as a professional freelance project. The goal was to automate schedule creation, reducing manual effort and eliminating process errors.
+- Folga semanal fixa (padrão: segunda-feira)
+- Regra de domingo 2x1 (trabalha dois domingos e folga no terceiro)
+- Exportação para `.xlsx` com layout simples e compartilhável
 
-The implementation of this project delivered visible results: increased operational efficiency, improved HR team organization, and faster and more reliable processes.
+Prévia:
+![Gerador de Escala](https://i.imgur.com/LrlI6FJ.png)
 
-Features
-Schedule Generation: Creates weekly/monthly schedules based on configurable parameters.
+## Estrutura do Projeto
 
-Fixed Day Off: Allows selecting a fixed weekly day off (default is Monday).
+- Script principal: veja [Projeto_EscalaDeTrabalhov1/main.py](Projeto_EscalaDeTrabalhov1/main.py)
+- Saída esperada: `escala.xlsx` gerado na raiz do projeto
 
-2x1 Sunday Rule: Works two consecutive Sundays and rests on the third.
+## Pré-requisitos
 
-Excel Export: Generates a .xlsx file with a clear and shareable layout.
+- Python 3.9+ (Windows, macOS ou Linux)
+- Bibliotecas Python:
+  - `pandas`
+  - `openpyxl`
 
-How It Works
-The script generates the schedule based on:
+Instale as dependências (Windows/PowerShell):
 
-employee_name: Name of the employee
+```powershell
+pip install -r requirements.txt
+```
 
-start_date: Start date of the schedule
+Caso não queira usar `requirements.txt`, instale diretamente:
 
-weeks: Number of weeks to cover
-
-fixed_day_off: Fixed day off (optional; default = Monday)
-
-2x1 Sunday Rule: Applied automatically
-
-Prerequisites
-Python 3
-Libraries:
-
+```powershell
 pip install pandas openpyxl
+```
 
-How to Use
-Clone the repository:
+## Como Executar (Windows)
 
+1. Clone o repositório:
+
+```powershell
 git clone https://github.com/archivesysl/escala-em-python-p-mercado.git
 cd escala-em-python-p-mercado
+```
 
-Configure the parameters in gerador_escala.py:
+2. Opcional: crie um ambiente virtual e instale dependências:
 
-employee_name = "João"
-start_date = "2024-10-01"
-weeks = 4
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
 
+3. Executar via CLI (recomendado):
 
-Run the script:
-python gerador_escala.py
+```powershell
+python ".\Projeto_EscalaDeTrabalhov1\main.py" --nome "João" --inicio 2026-01-01 --semanas 4 --folga segunda
+```
 
-Check the escala_trabalho.xlsx file generated in the same directory.
+Se preferir usar valores padrão, basta:
 
-Customization
-employee_name: Change the name as needed
+```powershell
+python ".\Projeto_EscalaDeTrabalhov1\main.py"
+```
 
-start_date: Set the desired start date
+4. Execute e verifique o resultado:
 
-weeks: Adjust the duration of the schedule
+```powershell
+python ".\Projeto_EscalaDeTrabalhov1\main.py"
+```
 
-fixed_day_off: Choose a different day off
+5. Verifique o arquivo `escala.xlsx` gerado na pasta do projeto.
 
-The 2x1 logic for Sundays is already included.
+## Como Funciona
 
-Technologies Used
-Python 3
-Pandas
-Openpyxl
+O script cria uma lista com todos os dias, marcando `Trabalho` ou `Folga` conforme regras:
 
-Results Achieved
+- `folga_fixa`: o dia da semana escolhido fica como `Folga` toda semana
+- Domingos seguem 2x1: no 3º domingo de cada ciclo, marca `Folga`
+- Exportação: os dados são salvos em `escala.xlsx` usando `openpyxl`
 
-✅ Fully automated schedule creation
+## Personalização Rápida
 
-✅ Elimination of manual errors
+- Alterar nome: mude `nome_funcionario`
+- Alterar início: mude `data_inicial` (formato `AAAA-MM-DD`)
+- Duração: ajuste `semanas`
+- Dia de folga: mude `folga_fixa` para `"terça"`, `"quarta"`, etc.
 
-✅ Easy to use for non-technical teams
+## Solução de Problemas
 
-✅ Modular code, ready for future adaptations
+- Erro `ModuleNotFoundError`: instale dependências com `pip install -r requirements.txt`
+- `python` não é reconhecido: use `py -3` ou instale Python no PATH
+- Permissão ao ativar `.venv`: execute o PowerShell como administrador ou ajuste a política de execução
 
-Author
+## Tecnologias
+
+- Python, Pandas, OpenPyXL
+
+## Autor
+
 Natan Da Luz – Developer
-Contact: natandaluz01@gmail.com
+Contato: natandaluz01@gmail.com
 
-Project developed as a freelance job for process automation in a supermarket chain.
+Projeto desenvolvido como trabalho freelance para automação de processos em uma rede de supermercado.

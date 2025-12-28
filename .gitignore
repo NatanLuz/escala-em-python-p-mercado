@@ -1,0 +1,15 @@
+# Python venv
+.venv/
+
+# OS files
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Excel outputs
+*.xlsx
+
+# VS Code
+.vscode/
