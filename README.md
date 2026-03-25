@@ -2,9 +2,9 @@
 [![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)]()
 [![OpenPyXL](https://img.shields.io/badge/OpenPyXL-000000?style=flat&logo=python&logoColor=white)]()
 
-## Visão Geral
+## Leia abaixo sobre o Projeto 👇🏻
 
-Este projeto é um gerador de escala de trabalho SIMPLES, MAS automático em Python, com exportação para Excel. Ele cria escalas semanais configuráveis, incluindo:
+Este projeto é um gerador de escala de trabalho SIMPLES, porém automático em Python, com exportação para Excel. Ele cria escalas semanais configuráveis, incluindo:
 
 - Folga semanal fixa (padrão: segunda-feira)
 - Regra de domingo 2x1 (trabalha dois domingos e folga no terceiro)
@@ -18,7 +18,7 @@ Prévia:
 - Script principal: veja [Projeto_EscalaDeTrabalhov1/main.py](Projeto_EscalaDeTrabalhov1/main.py)
 - Saída esperada: `escala.xlsx` gerado na raiz do projeto
 
-## Pré-requisitos
+## Pré-requisitos para rodar na máquina
 
 - Python 3.9+ (Windows, macOS ou Linux)
 - Bibliotecas Python:
