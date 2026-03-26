@@ -103,13 +103,6 @@ Trecho ilustrativo da planilha gerada:
 
 Projeto desenvolvido como solução prática freelance para automação de escala em uma rede de supermercados. O objetivo foi transformar uma atividade manual e suscetível a inconsistências em um processo reprodutível, auditável e de fácil operação e manutenção.
 
-## Diferenciais para Portfólio 
-
-- Aplicação de regras de negócio reais em lógica programática
-- Uso de CLI para flexibilidade operacional
-- Entrega de resultado em formato amplamente utilizado no ambiente corporativo (`.xlsx`)
-- Foco em produtividade e redução de erro humano
-
 ## Autor 👤
 
 **Natan Da Luz**  
