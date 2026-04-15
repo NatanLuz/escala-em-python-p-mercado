@@ -13,6 +13,10 @@ Este projeto foi desenvolvido para resolver um problema recorrente em operaçõe
 
 A solução automatiza a geração de escalas de trabalho com base em regras reais utilizadas em supermercados, garantindo previsibilidade, padronização, eficiência, confiabilidade e escalabilidade. O resultado é uma rotina mais eficiente para liderança e RH, com saída pronta para compartilhamento em Excel.
 
+## Contexto Profissional 🏢
+
+Projeto desenvolvido como solução prática freelance para automação de escala em uma rede de supermercados. O objetivo foi transformar uma atividade manual e suscetível a inconsistências em um processo reprodutível, auditável e de fácil operação e manutenção.
+
 ## Funcionalidades ⚙️
 
 - Geração automática de escala semanal
@@ -98,10 +102,6 @@ Trecho ilustrativo da planilha gerada:
 | 2026-01-05 | Segunda       | Folga    |
 | 2026-01-11 | Domingo       | Trabalho |
 | 2026-01-18 | Domingo       | Folga    |
-
-## Contexto Profissional 🏢
-
-Projeto desenvolvido como solução prática freelance para automação de escala em uma rede de supermercados. O objetivo foi transformar uma atividade manual e suscetível a inconsistências em um processo reprodutível, auditável e de fácil operação e manutenção.
 
 ## Autor 👤
 
