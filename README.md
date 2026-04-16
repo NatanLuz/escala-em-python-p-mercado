@@ -54,7 +54,7 @@ As regras implementadas refletem cenários reais de operação:
 - `Projeto_EscalaDeTrabalhov1/main.py`: script principal de geração da escala
 - `escala.xlsx`: arquivo de saída gerado automaticamente
 
-## Como Executar ▶️
+## Como executar este projeto na sua máquina ▶️
 
 ### 1) Clonar o repositório
 
