@@ -5,96 +5,48 @@
 
 # Gerador de Escala de Trabalho Automatizado
 
-Automação de escalas semanais com regras de negócio reais e exportação para Excel.
+## Descrição curta
 
-## Sobre o Projeto 📌
+Aplicação em Python para geração automática de escalas semanais com saída em Excel, orientada por regras de negócio de operação varejista (folga fixa semanal e ciclo de domingos 2x1), executada por CLI e com comportamento determinístico para garantir previsibilidade e reprodutibilidade do resultado.
 
-Este projeto foi desenvolvido para resolver um problema recorrente em operações de varejo: a montagem manual de escalas semanais, que consome tempo e aumenta a chance de erros operacionais.
+## Problema resolvido
 
-A solução automatiza a geração de escalas de trabalho com base em regras reais utilizadas em supermercados, garantindo previsibilidade, padronização, eficiência, confiabilidade e escalabilidade. O resultado é uma rotina mais eficiente para liderança e RH, com saída pronta para compartilhamento em Excel.
+A montagem manual de escala em redes de supermercados costuma gerar retrabalho, inconsistências entre semanas e baixo controle sobre regras recorrentes de jornada. Esse projeto resolve esse cenário ao transformar um processo operacional sensível em uma rotina automatizada, auditável e repetível.
 
-## Contexto Profissional 🏢
+## Solução proposta
 
-Projeto desenvolvido como solução prática freelance para automação de escala em uma rede de supermercados. O objetivo foi transformar uma atividade manual e suscetível a inconsistências em um processo reprodutível, auditável e de fácil operação e manutenção.
+O sistema recebe parâmetros pela linha de comando, calcula a escala com base em datas de início e número de semanas, aplica regras calendáricas fixas e exporta o resultado em formato `.xlsx`. A abordagem elimina decisões manuais na geração: mesmas entradas produzem a mesma escala.
 
-## Funcionalidades ⚙️
+## Funcionalidades
 
-- Geração automática de escala semanal
-- Definição de folga fixa por dia da semana (ex.: segunda-feira)
-- Regra de domingos no formato 2x1 (trabalha dois, folga no terceiro)
-- Configuração por linha de comando (CLI)
-- Exportação automática para arquivo `.xlsx`
+- Geração automática de escala semanal por período configurável.
+- Configuração de folga fixa por dia da semana.
+- Aplicação automática da regra de domingos no ciclo 2x1.
+- Execução por CLI com parâmetros explícitos.
+- Exportação direta para planilha Excel (`escala.xlsx`).
 
-## Prévia 🖼️
+## Regras de negócio
 
-Imagem ilustrativa da escala gerada:
+1. **Folga fixa semanal**: um dia da semana definido pelo usuário é sempre marcado como folga.
+2. **Domingos em ciclo 2x1**: o sistema marca dois domingos consecutivos como trabalho e o terceiro como folga, reiniciando o ciclo na sequência.
+3. **Prioridade de regras por data**: para cada data do período, a classificação final (`Trabalho` ou `Folga`) é calculada conforme o calendário da semana e o estado do ciclo dominical.
+4. **Cálculo orientado por datas**: a escala é construída por iteração de datas reais (não por posições fixas), o que mantém a consistência em qualquer mês/ano.
+5. **Determinismo da geração**: dado o mesmo conjunto de parâmetros (`nome`, `inicio`, `semanas`, `folga`), a saída é invariável e reprodutível.
 
-![Previa do Gerador de Escala](https://i.imgur.com/LrlI6FJ.png)
-
-## Regras de Negócio 🧠
-
-As regras implementadas refletem cenários reais de operação:
-
-1. Um dia fixo da semana é sempre marcado como folga.
-2. Os domingos seguem um ciclo 2x1:
-   - 1º domingo: trabalho
-   - 2º domingo: trabalho
-   - 3º domingo: folga
-3. A escala é construída por manipulação de datas, permitindo geração contínua por semanas.
-4. A lógica de geração é determinística: para a mesma entrada de parâmetros, a saída da escala permanece consistente.
-
-## Tecnologias 💻
-
-- **Python:** linguagem principal para implementar as regras de negócio, validação de parâmetros da CLI e manipulação de datas para montagem da escala.
-- **Pandas:** organização dos dados em formato tabular, facilitando o processamento da escala e a preparação da estrutura final de saída.
-- **OpenPyXL:** engine utilizada para gravar a planilha `.xlsx`, garantindo compatibilidade com o ambiente corporativo (Excel).
-
-## Estrutura do Projeto 🗂️
-
-- `Projeto_EscalaDeTrabalhov1/main.py`: script principal de geração da escala
-- `escala.xlsx`: arquivo de saída gerado automaticamente
-
-## Como executar este projeto na sua máquina ▶️
-
-### 1) Clonar o repositório
-
-```bash
-git clone https://github.com/archivesysl/escala-em-python-p-mercado.git
-cd escala-em-python-p-mercado
-```
-
-### 2) Instalar dependências
-
-```bash
-pip install pandas openpyxl
-```
-
-### 3) Executar o script principal
-
-Exemplo completo com parâmetros opcionais:
+## Exemplo de uso via CLI
 
 ```bash
 python "./Projeto_EscalaDeTrabalhov1/main.py" --nome "João" --inicio 2026-01-01 --semanas 4 --folga segunda
 ```
 
-Parâmetros disponíveis:
+Parâmetros:
 
-- `--nome`
-- `--inicio` (formato `AAAA-MM-DD`)
-- `--semanas`
-- `--folga`
+- `--nome`: identificação usada na escala.
+- `--inicio`: data inicial no formato `AAAA-MM-DD`.
+- `--semanas`: quantidade de semanas a gerar.
+- `--folga`: dia fixo da folga semanal.
 
-Também é possível executar com valores padrão:
-
-```bash
-python "./Projeto_EscalaDeTrabalhov1/main.py"
-```
-
-## Saída Gerada 📄
-
-Após a execução, o arquivo `escala.xlsx` é criado automaticamente na raiz do projeto.
-
-Trecho ilustrativo da planilha gerada:
+## Exemplo de saída
 
 | Data       | Dia da Semana | Status   |
 | ---------- | ------------- | -------- |
@@ -103,7 +55,72 @@ Trecho ilustrativo da planilha gerada:
 | 2026-01-11 | Domingo       | Trabalho |
 | 2026-01-18 | Domingo       | Folga    |
 
-## Autor 👤
+A tabela evidencia duas regras aplicadas em conjunto: folga fixa na segunda-feira e ciclo de domingos 2x1, com alternância previsível e verificável no calendário.
+
+## Stack tecnológica
+
+- **Python**: implementação da lógica de domínio, parsing de argumentos da CLI e cálculo de datas.
+- **Pandas**: modelagem tabular da escala, organização dos registros e preparação do dataset para exportação.
+- **OpenPyXL**: escrita do arquivo `.xlsx` com compatibilidade nativa com Excel em ambiente corporativo.
+
+## Estrutura do projeto
+
+```text
+.
+├── Projeto_EscalaDeTrabalhov1/
+│   └── main.py
+└── escala.xlsx
+```
+
+- `Projeto_EscalaDeTrabalhov1/main.py`: ponto de entrada da aplicação e motor de geração da escala.
+- `escala.xlsx`: artefato de saída gerado após a execução.
+
+## Instalação e execução
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/archivesysl/escala-em-python-p-mercado.git
+cd escala-em-python-p-mercado
+```
+
+### 2. Instalar dependências
+
+```bash
+pip install pandas openpyxl
+```
+
+### 3. Executar a geração da escala
+
+```bash
+python "./Projeto_EscalaDeTrabalhov1/main.py" --nome "João" --inicio 2026-01-01 --semanas 4 --folga segunda
+```
+
+Execução com parâmetros padrão:
+
+```bash
+python "./Projeto_EscalaDeTrabalhov1/main.py"
+```
+
+## Diferenciais técnicos
+
+- **Modelagem determinística de regras**: elimina variação manual e facilita auditoria de resultado.
+- **Lógica calendárica explícita**: tratamento direto de datas e dias da semana, incluindo regra cíclica para domingos.
+- **Operação por CLI**: execução simples em terminal, adequada para uso por liderança operacional sem interface dedicada.
+- **Pipeline de saída corporativa**: dados estruturados com Pandas e exportação `.xlsx` via OpenPyXL, prontos para compartilhamento interno.
+- **Baixa complexidade operacional**: solução enxuta, com poucas dependências e foco em regra de negócio.
+
+## Possíveis melhorias
+
+- Suporte a múltiplos colaboradores no mesmo ciclo de geração.
+- Validação avançada de conflitos de escala e cobertura mínima por dia.
+- Geração de múltiplas abas no Excel (por colaborador ou setor).
+- Parametrização de feriados e exceções de calendário.
+
+## Autor
 
 **Natan Da Luz**  
+
+Desenvolvedor Backend
+
 Contato: [natandaluz01@gmail.com](mailto:natandaluz01@gmail.com)
