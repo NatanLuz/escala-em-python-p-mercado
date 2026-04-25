@@ -110,6 +110,13 @@ python "./Projeto_EscalaDeTrabalhov1/main.py"
 - **Pipeline de saída corporativa**: dados estruturados com Pandas e exportação `.xlsx` via OpenPyXL, prontos para compartilhamento interno.
 - **Baixa complexidade operacional**: solução enxuta, com poucas dependências e foco em regra de negócio.
 
+## Possíveis melhorias
+
+- Suporte a múltiplos colaboradores no mesmo ciclo de geração.
+- Validação avançada de conflitos de escala e cobertura mínima por dia.
+- Geração de múltiplas abas no Excel (por colaborador ou setor).
+- Parametrização de feriados e exceções de calendário.
+
 ## Autor
 
 **Natan Da Luz**  
@@ -117,3 +124,5 @@ python "./Projeto_EscalaDeTrabalhov1/main.py"
 Desenvolvedor Backend
 
 Contato: [natandaluz01@gmail.com](mailto:natandaluz01@gmail.com)
+
+Linkedin: https://www.linkedin.com/in/natandaluzdesenvolvedor/
