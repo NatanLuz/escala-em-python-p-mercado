@@ -2,104 +2,192 @@
 [![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)]()
 [![OpenPyXL](https://img.shields.io/badge/OpenPyXL-000000?style=flat&logo=python&logoColor=white)]()
 
-## Visão Geral
+# 📊 Gerador de Escala de Trabalho
 
-Este projeto é um gerador de escala de trabalho automático em Python, com exportação para Excel. Ele cria escalas semanais configuráveis, incluindo:
+Aplicação em Python para geração automática de escalas de trabalho semanais, com exportação para Excel (`.xlsx`).
 
-- Folga semanal fixa (padrão: segunda-feira)
-- Regra de domingo 2x1 (trabalha dois domingos e folga no terceiro)
-- Exportação para `.xlsx` com layout simples e compartilhável
+Projeto desenvolvido com foco em automação de processos reais utilizados em ambiente de supermercado.
 
-Prévia:
-![Gerador de Escala](https://i.imgur.com/LrlI6FJ.png)
+---
 
-## Estrutura do Projeto
+## 🚀 Visão Geral
 
-- Script principal: veja [Projeto_EscalaDeTrabalhov1/main.py](Projeto_EscalaDeTrabalhov1/main.py)
-- Saída esperada: `escala.xlsx` gerado na raiz do projeto
+Este sistema permite gerar escalas de trabalho de forma simples e automatizada, seguindo regras comuns do mercado:
 
-## Pré-requisitos
+- ✔ Folga semanal fixa (configurável)
+- ✔ Regra de domingo 2x1 (trabalha dois domingos e folga no terceiro)
+- ✔ Geração automática de períodos
+- ✔ Exportação para Excel pronta para uso
 
-- Python 3.9+ (Windows, macOS ou Linux)
-- Bibliotecas Python:
-  - `pandas`
-  - `openpyxl`
+---
 
-Instale as dependências (Windows/PowerShell):
+## 🖼️ Prévia do Projeto
 
-```powershell
-pip install -r requirements.txt
+<p align="center">
+  <img src="escaladetrabalho.PNG" alt="Gerador de Escala" width="700"/>
+</p>
+
+---
+
+## 📁 Estrutura do Projeto
+
+```text
+Projeto_EscalaDeTrabalhov1/
+│
+├── main.py                 # Script principal
+├── escaladetrabalho.PNG    # Imagem de preview
+├── README.md               # Documentação
+├── requirements.txt        # Dependências
+└── escala.xlsx             # Arquivo gerado (após execução)
 ```
 
-Caso não queira usar `requirements.txt`, instale diretamente:
+---
 
-```powershell
-pip install pandas openpyxl
-```
+## ⚙️ Pré-requisitos
 
-## Como Executar (Windows)
+- Python 3.9 ou superior
+- pip instalado
 
-1. Clone o repositório:
+### Bibliotecas utilizadas
 
-```powershell
+- pandas
+- openpyxl
+
+---
+
+## 📦 Instalação
+
+Clone o repositório:
+
+```bash
 git clone https://github.com/archivesysl/escala-em-python-p-mercado.git
 cd escala-em-python-p-mercado
 ```
 
-### 2. Instalar dependências
+Instale as dependências:
+
+```bash
+pip install -r requirements.txt
+```
+
+Ou manualmente:
 
 ```bash
 pip install pandas openpyxl
 ```
 
-### 3. Executar a geração da escala
+---
+
+## ▶️ Como Executar
+
+Execução com parâmetros personalizados:
 
 ```bash
-python "./Projeto_EscalaDeTrabalhov1/main.py" --nome "João" --inicio 2026-01-01 --semanas 4 --folga segunda
+python "./Projeto_EscalaDeTrabalhov1/main.py" \
+--nome "João" \
+--inicio 2026-01-01 \
+--semanas 4 \
+--folga segunda
 ```
 
-Execução com parâmetros padrão:
+Execução padrão:
 
 ```bash
 python "./Projeto_EscalaDeTrabalhov1/main.py"
 ```
 
-4. Execute e verifique o resultado:
+---
 
-```powershell
-python ".\Projeto_EscalaDeTrabalhov1\main.py"
+## 📄 Saída
+
+Após a execução, será gerado automaticamente:
+
+```text
+escala.xlsx
 ```
 
-5. Verifique o arquivo `escala.xlsx` gerado na pasta do projeto.
+Arquivo pronto para:
 
-## Como Funciona
+- Compartilhamento
+- Impressão
+- Uso operacional
 
-O script cria uma lista com todos os dias, marcando `Trabalho` ou `Folga` conforme regras:
+---
 
-- `folga_fixa`: o dia da semana escolhido fica como `Folga` toda semana
-- Domingos seguem 2x1: no 3º domingo de cada ciclo, marca `Folga`
-- Exportação: os dados são salvos em `escala.xlsx` usando `openpyxl`
+## 🧠 Como Funciona
 
-## Personalização Rápida
+O sistema gera uma sequência de datas e aplica regras:
 
-- Alterar nome: mude `nome_funcionario`
-- Alterar início: mude `data_inicial` (formato `AAAA-MM-DD`)
-- Duração: ajuste `semanas`
-- Dia de folga: mude `folga_fixa` para `"terça"`, `"quarta"`, etc.
+- 📅 Folga fixa: define um dia da semana como folga recorrente
+- 🔁 Regra 2x1 domingos:
+  - Trabalha 2 domingos consecutivos
+  - Folga no 3º domingo
+- 📤 Exportação:
+  - Utiliza openpyxl para gerar o Excel
 
-## Solução de Problemas
+---
 
-- Erro `ModuleNotFoundError`: instale dependências com `pip install -r requirements.txt`
-- `python` não é reconhecido: use `py -3` ou instale Python no PATH
-- Permissão ao ativar `.venv`: execute o PowerShell como administrador ou ajuste a política de execução
+## ⚡ Personalização Rápida
 
-## Tecnologias
+Você pode ajustar facilmente:
 
-- Python, Pandas, OpenPyXL
+| Parâmetro | Descrição | Exemplo |
+| --- | --- | --- |
+| `--nome` | Nome do funcionário | `João` |
+| `--inicio` | Data inicial | `2026-01-01` |
+| `--semanas` | Quantidade de semanas | `4` |
+| `--folga` | Dia de folga fixa | `segunda` |
 
-## Autor
+---
 
-Natan Da Luz – Developer
-Contato: natandaluz01@gmail.com
+## 🛠️ Solução de Problemas
 
-Projeto desenvolvido como trabalho freelance para automação de processos em uma rede de supermercado.
+Erro: ModuleNotFoundError
+
+```bash
+pip install -r requirements.txt
+```
+
+Python não reconhecido:
+
+```bash
+py -3
+```
+
+Ou adicione ao PATH.
+
+Erro de permissão no Windows:
+
+- Execute PowerShell como administrador
+
+---
+
+## 🧩 Tecnologias
+
+- Python
+- Pandas
+- OpenPyXL
+
+---
+
+## 📌 Melhorias Futuras
+
+- Interface gráfica (GUI)
+- Exportação para PDF
+- API para integração com sistemas
+- Dashboard web
+
+---
+
+## 👨‍💻 Autor
+
+Natan Da Luz
+Desenvolvedor Backend
+
+📧 natandaluz01@gmail.com
+
+---
+
+## 📄 Licença
+
+Este projeto é de uso livre para fins de estudo e melhoria.
