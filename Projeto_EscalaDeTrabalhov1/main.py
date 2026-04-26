@@ -2,6 +2,14 @@ import argparse
 from datetime import datetime, timedelta
 import pandas as pd
 
+## projeto para gerar escala de trabalho com exportação para Excel, seguindo a regra de domingo 2x1 e folga fixa
+## O programa aceita parâmetros de entrada para nome do funcionário, data inicial, quantidade de semanas e dia de folga fixa.
+## O arquivo de saída é sempre 'escala.xlsx', contendo a escala gerada com as informações de data, dia da semana, status (trabalho ou folga) e nome do funcionário.
+
+## Exemplo de uso:
+# python main.py --nome "Maria" --inicio "2024-10-01" --semanas 4 --folga "terça"
+
+
 
 def gerar_escala(nome_funcionario: str, data_inicial: str, semanas: int, folga_fixa: str = "segunda"):
     dias_semana = ["segunda", "terça", "quarta", "quinta", "sexta", "sábado", "domingo"]
