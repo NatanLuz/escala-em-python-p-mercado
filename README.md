@@ -38,7 +38,7 @@ Projeto_EscalaDeTrabalhov1/
 ├── escaladetrabalho.PNG    # Imagem de preview
 ├── README.md               # Documentação
 ├── requirements.txt        # Dependências
-└── escala.xlsx             # Arquivo gerado (após execução)
+└── escala.xlsx             # Arquivo é gerado(após execução)
 ```
 
 ---
