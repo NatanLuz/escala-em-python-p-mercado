@@ -14,10 +14,10 @@ Projeto desenvolvido com foco em automação de processos reais utilizados em am
 
 Este sistema permite gerar escalas de trabalho de forma simples e automatizada, seguindo regras comuns do mercado:
 
-- ✔ Folga semanal fixa (configurável)
-- ✔ Regra de domingo 2x1 (trabalha dois domingos e folga no terceiro)
-- ✔ Geração automática de períodos
-- ✔ Exportação para Excel pronta para uso
+-  Folga semanal fixa (configurável)
+-  Regra de domingo 2x1 (trabalha dois domingos e folga no terceiro)
+-  Geração automática de períodos
+-  Exportação para Excel pronta para uso
 
 ---
 
