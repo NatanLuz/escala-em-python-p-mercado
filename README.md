@@ -6,15 +6,15 @@
 
 Aplicação em Python para geração automática de escalas de trabalho semanais, com exportação para Excel (`.xlsx`).
 
-Projeto desenvolvido com foco em automação de processos reais utilizados em ambiente de supermercado.
+Projeto desenvolvido com foco em automação de processos reais utilizado no ambiente de uma r de. de supermercados.
 
 ---
 
 ## 🚀 Visão Geral
 
-Este sistema permite gerar escalas de trabalho de forma simples e automatizada, seguindo regras comuns do mercado:
+Neste sistema permite gerar escalas de trabalho de forma simples e automatizada, seguindo regras comuns do mercado:
 
--  Folga semanal fixa (configurável)
+-  Folga Semanal Fixa (configurável)
 -  Regra de domingo 2x1 (trabalha dois domingos e folga no terceiro)
 -  Geração automática de períodos
 -  Exportação para Excel pronta para uso
@@ -78,7 +78,7 @@ pip install pandas openpyxl
 
 ---
 
-## ▶️ Como Executar
+## ▶️ Como Executar ?
 
 Execução com parâmetros personalizados:
 
@@ -119,11 +119,15 @@ Arquivo pronto para:
 O sistema gera uma sequência de datas e aplica regras:
 
 - 📅 Folga fixa: define um dia da semana como folga recorrente
+
 - 🔁 Regra 2x1 domingos:
+
   - Trabalha 2 domingos consecutivos
   - Folga no 3º domingo
+
 - 📤 Exportação:
-  - Utiliza openpyxl para gerar o Excel
+
+  - Utiliza-se OPENPYXL para gerar o Excel
 
 ---
 
@@ -140,33 +144,11 @@ Você pode ajustar facilmente:
 
 ---
 
-## 🛠️ Solução de Problemas
-
-Erro: ModuleNotFoundError
-
-```bash
-pip install -r requirements.txt
-```
-
-Python não reconhecido:
-
-```bash
-py -3
-```
-
-Ou adicione ao PATH.
-
-Erro de permissão no Windows:
-
-- Execute PowerShell como administrador
-
----
-
 ## 🧩 Tecnologias
 
 - Python
 - Pandas
-- OpenPyXL
+- OPENPYXL
 
 ---
 
@@ -179,9 +161,10 @@ Erro de permissão no Windows:
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Autor do projeto
 
 Natan Da Luz
+
 Desenvolvedor Backend
 
 📧 natandaluz01@gmail.com
