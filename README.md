@@ -1,86 +1,87 @@
+# Gerador de Escala de Trabalho (Python CLI)
+
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)]()
 [![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)]()
 [![OpenPyXL](https://img.shields.io/badge/OpenPyXL-000000?style=flat&logo=python&logoColor=white)]()
 
-# 📊 Gerador de Escala de Trabalho
+## 📖 Sobre o projeto
 
-Aplicação em Python para geração automática de escalas de trabalho semanais, com exportação para Excel (`.xlsx`).
+O **Gerador de Escala de Trabalho** é uma aplicação de linha de comando desenvolvida em Python para automatizar a criação de escalas semanais e exportar o resultado para uma planilha Excel.
 
-Projeto desenvolvido com foco em automação de processos reais utilizado no ambiente de uma r de. de supermercados.
+Esta é a primeira versão do sistema de geração de escalas de trabalho. O projeto foi criado para automatizar regras utilizadas em ambientes operacionais e serviu como base conceitual para a evolução posterior do **Workshift Manager**, uma solução mais completa com interface gráfica.
 
----
+A aplicação demonstra automação de processos com Python, manipulação de datas, configuração por argumentos de linha de comando e geração de arquivos `.xlsx`.
 
-## 🚀 Visão Geral
+## ✨ Funcionalidades
 
-Neste sistema permite gerar escalas de trabalho de forma simples e automatizada, seguindo regras comuns do mercado:
+- Geração automática de escalas semanais;
+- configuração de uma folga semanal fixa;
+- aplicação da regra de domingos 2x1:
+  - trabalha em dois domingos consecutivos;
+  - folga no terceiro domingo;
+- geração automática do período a partir da data inicial e da quantidade de semanas;
+- personalização pelo nome do colaborador;
+- exportação automática da escala para `escala.xlsx`;
+- configuração por parâmetros de linha de comando.
 
--  Folga Semanal Fixa (configurável)
--  Regra de domingo 2x1 (trabalha dois domingos e folga no terceiro)
--  Geração automática de períodos
--  Exportação para Excel pronta para uso
+### Parâmetros
 
----
+| Parâmetro | Descrição | Exemplo |
+| --- | --- | --- |
+| `--nome` | Nome do colaborador | `João` |
+| `--inicio` | Data inicial da escala | `2026-01-01` |
+| `--semanas` | Quantidade de semanas | `4` |
+| `--folga` | Dia da folga semanal fixa | `segunda` |
 
-## 🖼️ Prévia do Projeto
+Após a execução, o arquivo `escala.xlsx` fica disponível para consulta, compartilhamento, impressão ou uso operacional.
+
+## 🖼️ Screenshots
+
+A imagem abaixo apresenta uma escala gerada pela aplicação:
 
 <p align="center">
-  <img src="escaladetrabalho.PNG" alt="Gerador de Escala" width="700"/>
+  <img src="escaladetrabalho.PNG" alt="Escala gerada pela aplicação" width="700">
 </p>
 
----
+## 🚀 Tecnologias
 
-## 📁 Estrutura do Projeto
+- **Python:** implementação da aplicação e processamento das regras;
+- **Pandas:** manipulação dos dados da escala;
+- **OpenPyXL:** geração do arquivo Excel.
 
-```text
-Projeto_EscalaDeTrabalhov1/
-│
-├── main.py                 # Script principal
-├── escaladetrabalho.PNG    # Imagem de preview
-├── README.md               # Documentação
-├── requirements.txt        # Dependências
-└── escala.xlsx             # Arquivo é gerado(após execução)
-```
+## ⚙️ Como executar
 
----
+### Pré-requisitos
 
-## ⚙️ Pré-requisitos
+- Python 3.9 ou superior;
+- pip.
 
-- Python 3.9 ou superior
-- pip instalado
-
-### Bibliotecas utilizadas
-
-- pandas
-- openpyxl
-
----
-
-## 📦 Instalação
-
-Clone o repositório:
+### Clonar o repositório
 
 ```bash
 git clone https://github.com/archivesysl/escala-em-python-p-mercado.git
 cd escala-em-python-p-mercado
 ```
 
-Instale as dependências:
+### Instalar as dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Ou manualmente:
+Como alternativa, as bibliotecas podem ser instaladas manualmente:
 
 ```bash
 pip install pandas openpyxl
 ```
 
----
+### Execução padrão
 
-## ▶️ Como Executar ?
+```bash
+python "./Projeto_EscalaDeTrabalhov1/main.py"
+```
 
-Execução com parâmetros personalizados:
+### Execução com parâmetros personalizados
 
 ```bash
 python "./Projeto_EscalaDeTrabalhov1/main.py" \
@@ -90,87 +91,43 @@ python "./Projeto_EscalaDeTrabalhov1/main.py" \
 --folga segunda
 ```
 
-Execução padrão:
+Ao final da execução, a aplicação gera automaticamente o arquivo `escala.xlsx`.
 
-```bash
-python "./Projeto_EscalaDeTrabalhov1/main.py"
-```
+## 📂 Estrutura do projeto
 
----
-
-## 📄 Saída
-
-Após a execução, será gerado automaticamente:
+A estrutura mantém o script, as dependências, a documentação e a imagem de demonstração no mesmo diretório:
 
 ```text
-escala.xlsx
+Projeto_EscalaDeTrabalhov1/
+├── main.py
+├── escaladetrabalho.PNG
+├── README.md
+├── requirements.txt
+└── escala.xlsx (gerado após execução)
 ```
 
-Arquivo pronto para:
+- `main.py`: script principal da aplicação;
+- `escaladetrabalho.PNG`: imagem de demonstração;
+- `README.md`: documentação técnica;
+- `requirements.txt`: dependências do projeto;
+- `escala.xlsx`: planilha criada após a execução.
 
-- Compartilhamento
-- Impressão
-- Uso operacional
+> A evolução do conceito para uma aplicação com interface gráfica deu origem posteriormente ao projeto Workshift Manager.
 
----
+## 🌐 Deploy
 
-## 🧠 Como Funciona
+O projeto é uma aplicação de linha de comando e não possui deploy web. Pode ser executado localmente em qualquer ambiente compatível com Python 3.9+ e com as dependências instaladas.
 
-O sistema gera uma sequência de datas e aplica regras:
+A distribuição consiste no código-fonte e no arquivo de dependências. Após a execução, a aplicação gera a planilha `escala.xlsx` para utilização operacional.
 
-- 📅 Folga fixa: define um dia da semana como folga recorrente
+## 👤 Autor
 
-- 🔁 Regra 2x1 domingos:
+**Natan Da Luz**
 
-  - Trabalha 2 domingos consecutivos
-  - Folga no 3º domingo
-
-- 📤 Exportação:
-
-  - Utiliza-se OPENPYXL para gerar o Excel
-
----
-
-## ⚡ Personalização Rápida
-
-Você pode ajustar facilmente:
-
-| Parâmetro | Descrição | Exemplo |
-| --- | --- | --- |
-| `--nome` | Nome do funcionário | `João` |
-| `--inicio` | Data inicial | `2026-01-01` |
-| `--semanas` | Quantidade de semanas | `4` |
-| `--folga` | Dia de folga fixa | `segunda` |
-
----
-
-## 🧩 Tecnologias
-
-- Python
-- Pandas
-- OPENPYXL
-
----
-
-## 📌 Melhorias Futuras
-
-- Interface gráfica (GUI)
-- Exportação para PDF
-- API para integração com sistemas
-- Dashboard web
-
----
-
-## 👨‍💻 Autor do projeto
-
-Natan Da Luz
-
-Desenvolvedor Backend
-
-📧 natandaluz01@gmail.com
-
----
+- LinkedIn: [linkedin.com/in/natandaluz](https://www.linkedin.com/in/natandaluz/)
+- Portfólio: [portfolionatan.vercel.app](https://portfolionatan.vercel.app/)
+- E-mail: [natandaluz01@gmail.com](mailto:natandaluz01@gmail.com)
 
 ## 📄 Licença
 
-Este projeto é de uso livre para fins de estudo e melhoria.
+Este projeto está sem uma licença definida no momento.
